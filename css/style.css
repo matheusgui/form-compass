@@ -19,3 +19,12 @@ body {
     border-radius: 20px;
     justify-content: center;
 }
+
+.form-header {
+    padding: 20px 0;
+}
+
+.main-title {
+    font-family: 'Inter';
+    font-weight: 600;
+}
