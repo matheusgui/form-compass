@@ -14,10 +14,12 @@ body {
 .form-card {
     background: #FFFFFF;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     max-width: 620px;
     border-radius: 20px;
-    justify-content: center;
 }
 
 .form-header {
