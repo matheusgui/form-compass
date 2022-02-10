@@ -62,7 +62,7 @@ label {
 input {
     padding: 8px;
     font-family: 'Nunito';
-    font-size: 16px;
+    font-size: 1em;
     color: #767676;
     border: 2px solid #AAAAAA;
     border-radius: 4px;
@@ -94,4 +94,11 @@ input[type="checkbox"] {
     border-radius: 10px;
     padding: 0 12px;
     cursor: pointer;
+}
+
+.error {
+    display: none;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #FF0000;
 }
