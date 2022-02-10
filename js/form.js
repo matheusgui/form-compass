@@ -10,7 +10,6 @@ const terms = $('#terms');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log("enviou");
 
     validateForm();
 });
