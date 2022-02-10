@@ -29,6 +29,7 @@ body {
 .main-title {
     font-family: 'Inter';
     font-weight: 600;
+    text-align: center;
 }
 
 .form-body {

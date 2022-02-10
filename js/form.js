@@ -1,4 +1,5 @@
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 const form = $('#form');
 const user = $('#username');
@@ -9,9 +10,12 @@ const date = $('#date');
 const terms = $('#terms');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    validateForm();
+    const errors = validateForm(form);
+
+    if (errors.length > 0) {
+        e.preventDefault();
+    }
 });
 
 
@@ -24,43 +28,53 @@ function validateForm(form) {
     const dateValue = date.value.trim();
     const termsChecked = terms.checked;
 
+    const errors = [];
+
     if (!userValue.includes(' ') || userValue.length < 4) {
         setError(user, "Fullname Invalid");
+        errors.push(1);
     } else {
         hideError(user);
     }
 
     if (!validEmail(emailValue)) {
         setError(email, "Email Invalid");
+        errors.push(2);
     } else {
         hideError(email);
     }
 
-    if (phoneValue.length !== 11 || validPhone(phoneValue)) {
-        setError(phone, "Phone Invalid");
-    } else {
-        hideError(phone);
-    }
-
     if (dateValue.length === 0) {
         setError(date, "Age Invalid");
+        errors.push(3);
     } else {
         hideError(date);
     }
 
+    if (phoneValue.length !== 11 || validPhone(phoneValue)) {
+        setError(phone, "Phone Invalid");
+        errors.push(4);
+    } else {
+        hideError(phone);
+    }
+
+
     if (passwordValue.length === 0 || validPassword(passwordValue)) {
         setError(password, "Password Invalid");
+        errors.push(5);
     } else {
         hideError(password);
     }
 
-    if(!termsChecked) {
+    if (!termsChecked) {
         setError(terms, "You must accept the terms!");
+        errors.push(6);
     } else {
         hideError(terms);
     }
-
+    return errors;
 }
+
 
 function setError(input, message) {
     const inputArea = input.parentElement.parentElement;
