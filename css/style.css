@@ -97,8 +97,11 @@ input[type="checkbox"] {
 }
 
 .error {
-    display: none;
     margin-top: 5px;
     font-size: 14px;
     color: #FF0000;
+}
+
+.hidden {
+    display: none;
 }
