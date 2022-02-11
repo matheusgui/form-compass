@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E5E5E5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 650px;
+    border-radius: 20px;
+}
+
+.form-header {
+    margin-top: 88px;
+    padding: 20px 0;
+}
+
+.main-title {
+    font-family: 'Inter';
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    width: 269px;
+    height: 177px;
+    background: #0DBDBD;
+    margin-top: 237px;
+    margin-bottom: 137px;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 12px;
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-size: 36px;
+}
