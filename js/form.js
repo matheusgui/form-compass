@@ -54,7 +54,7 @@ function validateForm(form) {
         hideError(date);
     }
 
-    if (phoneValue.length !== 11 || validPhone(phoneValue)) {
+    if (phoneValue.length !== 15 || validPhone(phoneValue)) {
         setError(phone, "Phone Invalid");
         errors.push(4);
     } else {
@@ -97,9 +97,33 @@ function validEmail(email) {
 }
 
 function validPhone(phone) {
-    return /[^0-9]/.test(phone);
+    return /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/.test(phone);
 }
 
 function validPassword(password) {
     return /[^0-9]/.test(password);
+}
+
+function mask(o, f) {
+    setTimeout(function () {
+        let v = maskPhone(o.value);
+        if (v != o.value) {
+            o.value = v;
+        }
+    }, 1);
+}
+
+function maskPhone(v) {
+    let r = v.replace(/\D/g, "");
+    r = r.replace(/^0/, "");
+    if (r.length > 10) {
+        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (r.length > 5) {
+        r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (r.length > 2) {
+        r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        r = r.replace(/^(\d*)/, "($1");
+    }
+    return r;
 }

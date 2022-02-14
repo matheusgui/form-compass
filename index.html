@@ -40,7 +40,7 @@
 
                 <div class="input-area">
                     <label>Phone *
-                        <input type="tel" placeholder="(83) 00000-0000" id="phone" />
+                        <input type="tel" placeholder="(83) 00000-0000" id="phone" onkeypress="mask(this, maskPhone);" onblur="mask(this, maskPhone)"; />
                     </label>
                     <div class="error"></div>
                 </div>
@@ -65,7 +65,7 @@
             <div class="input-row last-row">
                 <div class="input-area">
                     <label>
-                        <input type="checkbox" value="terms" id="terms"/>
+                        <input type="checkbox" value="terms" id="terms" />
                         <span class="checkmark"></span>
                         I accept the terms and privacy
                     </label>
