@@ -19,12 +19,17 @@ body {
     align-items: center;
     flex: 1;
     max-width: 650px;
+    height: 763px;
     border-radius: 20px;
 }
 
 .form-header {
     margin-top: 88px;
     padding: 20px 0;
+}
+
+.logo {
+    text-align: center;
 }
 
 .main-title {
@@ -44,8 +49,8 @@ body {
     width: 269px;
     height: 177px;
     background: #0DBDBD;
-    margin-top: 237px;
-    margin-bottom: 137px;
+    margin-top: 160px;
+    margin-bottom: 60px;
     color: #FFFFFF;
     border: 0;
     border-radius: 10px;
@@ -53,4 +58,31 @@ body {
     cursor: pointer;
     font-family: 'Nunito';
     font-size: 36px;
+}
+
+@media (max-width: 650px) {
+    body {
+        height: auto;
+        background: #FFFFFF;
+    }
+
+    .form-card {
+        width: 100vw;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .button {
+        margin-top: 56px;
+        margin-bottom: 60px;
+        width: 80vw;
+        height: 75px;
+    }
+
+}
+
+@media (max-height:750px) {
+    body {
+        height: auto;
+    }
 }

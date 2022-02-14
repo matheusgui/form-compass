@@ -19,11 +19,16 @@ body {
     align-items: center;
     flex: 1;
     max-width: 650px;
+    height: 763px;
     border-radius: 20px;
 }
 
 .form-header {
     padding: 20px 0;
+}
+
+.logo {
+    text-align: center;
 }
 
 .main-title {
@@ -70,11 +75,67 @@ input {
     margin-top: 5px;
 }
 
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+input[type="date"] {
+    width: 183.33px;
+    height: 38.67px;
+}
+
 input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    height: 14px;
+    width: 14px;
+    border: 1.5px solid #AAAAAA;
+    border-radius: 2px;
+    margin-top: 3.5px;
     margin-right: 5px;
 }
 
+label:hover input~.checkmark {
+    background-color: #CCCCCC;
+}
+
+input[type="checkbox"]:checked~.checkmark {
+    background: #0DBDBD;
+    border: 0;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.label input:checked~.checkmark:after {
+    display: block;
+}
+
+label .checkmark:after {
+    width: 5px;
+    height: 5px;
+    margin-left: 3px;
+    margin-top: 1.5px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked~.checkmark:after {
+    display: block;
+}
+
 .last-row {
+    justify-content: space-around;
     padding: 15px 40px;
     margin-top: 80px;
     margin-bottom: 40px;
@@ -98,11 +159,64 @@ input[type="checkbox"] {
 }
 
 .error {
-    margin-top: 5px;
+    margin-top: 4px;
+    font-family: 'Nunito';
     font-size: 14px;
     color: #FF0000;
 }
 
 .hidden {
     display: none;
+}
+
+@media (max-width:650px) {
+    body {
+        height: auto;
+        background: #FFFFFF;
+    }
+
+    .form-card {
+        width: 100vw;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .input-row {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .input-area {
+        margin-right: 0;
+    }
+
+    input[type="date"] {
+        width: auto;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    .last-row {
+        margin-top: 25px;
+    }
+
+    .button {
+        width: 80vw;
+        height: 56px;
+        margin-top: 20px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media (max-height:750px) {
+    body {
+        height: auto;
+    }
 }

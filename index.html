@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 
             <div class="input-row">
                 <div class="input-area">
-                    <label>Full Name
+                    <label>Full Name *
                         <input type="text" placeholder="Name" id="username" />
                     </label>
                     <div class="error"></div>
@@ -31,14 +32,14 @@
 
             <div class="input-row">
                 <div class="input-area large">
-                    <label>Email
+                    <label>Email *
                         <input type="email" placeholder="foo@bar.com" id="email" />
                     </label>
                     <div class="error"></div>
                 </div>
 
                 <div class="input-area">
-                    <label>Phone
+                    <label>Phone *
                         <input type="tel" placeholder="(83) 00000-0000" id="phone" />
                     </label>
                     <div class="error"></div>
@@ -47,7 +48,7 @@
 
             <div class="input-row">
                 <div class="input-area large">
-                    <label>Password
+                    <label>Password *
                         <input type="password" placeholder="Password" id="password" />
                     </label>
                     <div class="error"></div>
@@ -64,7 +65,8 @@
             <div class="input-row last-row">
                 <div class="input-area">
                     <label>
-                        <input type="checkbox" value="terms" id="terms" />
+                        <input type="checkbox" value="terms" id="terms"/>
+                        <span class="checkmark"></span>
                         I accept the terms and privacy
                     </label>
                     <div class="error"></div>

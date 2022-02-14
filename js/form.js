@@ -15,14 +15,17 @@ form.addEventListener('submit', (e) => {
 
     if (errors.length > 0) {
         e.preventDefault();
+    } else {
+        form.reset();
     }
+
 });
 
 
 
 function validateForm(form) {
     const userValue = user.value.trim();
-    const emailValue = email.value.trim();
+    const emailValue = email.value.trim().toLowerCase();
     const phoneValue = phone.value.trim();
     const passwordValue = password.value.trim();
     const dateValue = date.value.trim();
