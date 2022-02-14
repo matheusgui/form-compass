@@ -62,7 +62,7 @@ function validateForm(form) {
     }
 
 
-    if (passwordValue.length === 0 || validPassword(passwordValue)) {
+    if (passwordValue.length > 8 || passwordValue.length < 6 || validPassword(passwordValue)) {
         setError(password, "Password Invalid");
         errors.push(5);
     } else {
@@ -93,7 +93,7 @@ function hideError(input) {
 }
 
 function validEmail(email) {
-    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    return /^[^<>()[\]\\,;:\%#^\s@\"$&!@]+@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
 function validPhone(phone) {
@@ -101,5 +101,5 @@ function validPhone(phone) {
 }
 
 function validPassword(password) {
-    return /[^6-8]/.test(password);
+    return /[^0-9]/.test(password);
 }
